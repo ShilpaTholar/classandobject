@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Classes and objects</title>
+        
+ 
+    </head>
+    <script>  
+          
+        class Student  
+          {  
+            constructor(name,roll_no,age,gender)  
+            {  
+              this.roll_no=roll_no;  
+              this.name=name; 
+              this.age=age;
+              this.gender=gender; 
+            }  
+       
+            printStudentDetail()  
+            {  
+               document.writeln("<b>Roll no</b>: "+this.roll_no+"<br>"+"<b>Name</b>: "+this.name+"<br>","<b>Age:</b> "+this.age+"<br>"+"<b>Gender:</b>"+this.gender+"<br>")  
+            }  
+          }  
+        Student.prototype.college=function()  
+            {  
+                document.writeln("<b>College:</b> "+"VESIT")
+            } 
+            name=prompt("Please enter your name(Student1)");
+            roll_no=prompt("Please enter your roll_no(Student1)");
+            age= prompt("Please enter your age(Student1)");
+            gender=prompt("Enter your gender(Student1)");
+           
+              try{
+                 if(isNaN(roll_no)) throw "Roll no entered is not a number.Please Enter correct roll number for Student1";
+                 else if(roll_no==0) throw "Roll no cannot be zero for Student1";
+                 if(age<17 || age>25) throw "Enter valid age for Student1"
+                 else
+                 {
+                    var s1=new Student(name,roll_no,age,gender); 
+                    document.writeln("<u>Student1 details</u><br>"); 
+                    s1.printStudentDetail(); 
+                    s1.college();
+                 }
+              }
+              catch(e){
+                document.writeln(e)
+                    }
+            document.writeln("<br><br><u>Student2 details</u><br>");
+            var s2=new Student("Shilpa",66);
+            s2.age=20;
+            s2.gender="female";
+            s2.printStudentDetail();
+            s2.college();
+
+            var s3 = {   Name: "James", 
+                         age: 15, 
+                         gender:"Male",roll_no:22,
+                        printStudentDetail: function () 
+                        { document.write("<br><br><u>Student3 details</u><br>")
+                          document.write("<b>Roll no</b>: "+this.roll_no+"<br>"+"<b>Name</b>: "+this.Name+"<br>","<b>Age:</b> "+this.age+"<br>"+"<b>Gender:</b>"+this.gender+"<br>")
+                        }
+                };
+
+            s3.printStudentDetail()
+
+
+
+            
+        
+        </script> 
+        <body>
+            </body>
+</html>
